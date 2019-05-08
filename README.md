@@ -1,7 +1,7 @@
-# vue2-admin-brand
+# vue2-admin-tag
 基于vue2/element-ui搭建的后台admin基础框架，导航栏打开页为面包屑，基础功能详见README
 
-代码说明：copy源码后，只需在根目录下cmd执行命令 npm install 安装依赖包即可跑起来;
+代码说明：copy源码后，只需在根目录下cmd执行命令 npm install（或cnpm install 建议） 安装依赖包即可跑起来;
 
 
 功能说明：
@@ -23,13 +23,13 @@
 
 框架应用技术栈：
 ----
-    框架：vue2-
-    搭建工具：vue-cli/npm/webpack/node-
-    UI：element-ui-
-    基础库：vuex/axios/vue-router-
-    工具库：mock/vue-i18n/vue-animate/crypto-
-    其它资源：es6/sass/iconfont/babel-polyfill-
-    (es6自带，iconfont通过文件引入，与element-ui兼容，其他库都需npm安装，并写入依赖。)-
+    框架：vue2
+    搭建工具：vue-cli/npm/webpack/node
+    UI：element-ui
+    基础库：vuex/axios/vue-router
+    工具库：mock/vue-i18n/vue-animate/crypto
+    其它资源：es6/sass/iconfont/babel-polyfill
+    (es6自带，iconfont通过文件引入，与element-ui兼容，其他库都需npm安装，并写入依赖。)
 
 目录结构说明：
 ----
