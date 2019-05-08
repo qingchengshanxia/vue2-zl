@@ -6,18 +6,25 @@
 
 功能说明：
 ----
-    标准的文件构建目录-
-    头部和脚部共用-
-    登录控制-
-    非登录端与登录端view主组件区分-
-    axios封装成ajax的数据请求方式，支持跨域-
-    语言国际化-
-    登录密码加密-
-    sass工具快捷写css-
-    阿里巴巴的iconfont支持-
-    vue-animate动画效果支持-
-    mock模拟数据-
-    element-ui组件引入-
+    标准的文件构建目录
+    头部和脚部共用
+    登录控制
+    非登录端与登录端view主组件区分
+    axios封装的数据请求方式
+    语言国际化
+    登录密码加密
+    sass工具快捷写css
+    阿里巴巴的iconfont支持
+    vue-animate动画效果支持
+    mock模拟数据
+    element-ui组件引入
+    满屏定高表格
+    keep-alive引用
+    vuex全局状态数据管理
+    filtres
+    directive
+    公用方法集合
+    
 
 
 
