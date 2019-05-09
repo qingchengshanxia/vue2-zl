@@ -1,5 +1,5 @@
 # vue2-admin-tag
-基于vue2/element-ui搭建的后台admin基础框架，导航栏打开页为面包屑，基础功能详见README
+基于vue2/element-ui搭建的后台admin基础框架，支持tab便签栏，基础功能详见README
 
 代码说明：copy源码后，只需在根目录下cmd执行命令 npm install（或cnpm install 建议） 安装依赖包即可跑起来;
 
