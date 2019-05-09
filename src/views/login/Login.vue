@@ -63,72 +63,6 @@
                     </el-button>
                   </p>
               </div>
-              <div class="login-phone" :class="{'active':showitem==1}">
-                  <p>
-                    <el-input
-                      placeholder="请输入手机号"
-                      prefix-icon="icon-shouji iconfont"
-                      maxlength=11
-                      @keyup.native="trimUserPhone"
-                      v-model="userphone">
-                    </el-input>
-                    <el-tooltip class="item" effect="dark" content="记住手机号" placement="right">
-                        <span @click="rememberUserPhone" :class="{'active':issavephone}"><i class="iconfont icon-gou"></i></span>
-                    </el-tooltip>
-                  </p>
-                  <p>
-                    <el-input
-                      placeholder="请输入验证码"
-                      prefix-icon="icon-suo iconfont"
-                      maxlength=8
-                      @keydown.native="trimNum"
-                      v-model="num">
-                    </el-input>
-                    <span @click="sendNum" :class="{'num':true,active:issavenum}"><i>{{numtext}} {{numtext>=0?' S':''}}</i></span>
-                    <el-tooltip class="item" effect="dark" content="收不到验证码？" placement="right">
-                        <span class="question" @click="noReceiveNum"><i class="iconfont icon-question1"></i></span>
-                    </el-tooltip>
-                  </p>
-                  <p>
-                    <el-button :style="{width:'100%',fontSize:'16px'}" class="login" @click="goPhoneLogin">
-                      <span style="font-size: 18px;" >登录</span>
-                    </el-button>
-                  </p>
-              </div>
-              <div class="login-erweima" :class="{'active':showitem==2}">
-                <div class="qrcode">
-                  <img :src="require('@/assets/images/qrcode.png')">
-                  <p>微信扫描二维码进行登录</p>
-                </div>
-              </div>
-              <div class="login-app" :class="{'active':showitem==3}">
-                <div class="app-box">
-                    <div>
-                        <ul class="clearfix">
-                          <li>
-                            <p><img :src="require('@/assets/images/qrcode-a.png')"></p>
-                            <p><i class="iconfont icon-xiazai1"></i> Android版</p>
-                            <p>适用于安卓系统的智能手机</p>
-                          </li>
-                          <li>
-                            <p><img :src="require('@/assets/images/qrcode-ios.png')"></p>
-                            <p><i class="iconfont icon-xiazai1"></i> IOS版</p>
-                            <p>适用于苹果品牌的智能手机</p>
-                          </li>
-                        </ul>
-                    </div>
-                    <p>扫码或者点击按钮下载APP</p>
-                </div>
-              </div>
-          </div>
-          <div class="login-footer">
-              <p></p>
-              <ul class="clearfix">
-                <li @click="switchItem(0)" :class="{'active':showitem==0}"><i class="iconfont icon-yonghu"></i></li>
-                <li @click="switchItem(1)" :class="{'active':showitem==1}"><i class="iconfont icon-shouji"></i></li>
-                <li @click="switchItem(2)" :class="{'active':showitem==2}"><i class="iconfont icon-erweima"></i></li>
-                <li @click="switchItem(3)" :class="{'active':showitem==3}"><i class="iconfont icon-app"></i></li>
-              </ul>
           </div>
       </div>
     </div>
@@ -157,10 +91,6 @@
           
         },
         methods:{
-          switchItem(n){
-            //切换选项
-            this.showitem = n;
-          },
           trimUserName(){
             //检查用户名中是否为空格，如果为空，则清除空格
             this.username = this.$trimAll(this.username);
@@ -595,7 +525,7 @@
                   color: rgba(255, 255, 255, 0.5);
                 }
              }
-             .login-username,.login-phone,.login-erweima,.login-app {
+             .login-username {
                 width: 350px;
                 opacity: 0;
                 position: absolute;
@@ -667,116 +597,6 @@
                   }
                 }
              }  
-             .login-erweima {
-                .qrcode{
-                  text-align:center;
-                  >img {
-                    width: 150px;
-                  }
-                  >p {
-                    color: #ffffff;
-                    font-size: 14px;
-                  }
-                }
-             }
-             .login-app {
-              width: 400px;
-              margin:0 auto;
-              left: 0;
-              &.active {
-                bottom: -90px;
-              }
-              .app-box {
-                text-align:center;
-                >div {
-                  >ul {
-                    display: block;
-                    >li {
-                      float: left;
-                      width: 45%;
-                      margin-right: 10%;
-                      &:nth-of-type(2){
-                        margin-right: 0;
-                      }
-                      p {
-                        &:nth-of-type(1){
-                          img {
-                            width: 120px;
-                            border-radius: 2px;
-                          }
-                        }
-                        &:nth-of-type(2){
-                          display: block;
-                          font-size: 1.2rem;
-                          background-color: #ffffff;
-                          width: 120px;
-                          margin: 10px auto;
-                          padding: 5px 0;
-                          color: #000000;
-                          font-weight: bold;
-                          cursor: pointer;
-                          transition: all 0.5s cubic-bezier(0.78, 0.02, 0.2, 1), z-index 0.12s 0.12s;
-                        }
-                        &:nth-of-type(3){
-                          color: rgba(255, 255, 255, 0.6);
-                          font-size: 14px;
-                        }
-                      }
-                    }
-                  }
-                }
-                >p {
-                  text-align: center;
-                  color: #ffffff;
-                  margin-top: 30px;
-                  font-weight: bold;
-                }
-              }
-             }
-          }
-          .login-footer {
-            ul {
-              width: 280px;
-              height: 50px;
-              position: fixed;
-              bottom: 0;
-              left: 50%;
-              margin-left: -140px;
-              >li {
-                display: block;
-                float: left;
-                box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.3) inset, 1px 1px 5px rgba(0, 0, 0, 0.1);
-                transition: all 0.5s cubic-bezier(0.78, 0.02, 0.2, 1), z-index 0.12s 0.12s;
-                color: rgba(255, 255, 255, 0.8);
-                background-color: rgba(25, 230, 128, 0.6);
-                border: none;
-                cursor: pointer;
-                height: 50px;
-                width: 50px;
-                text-align: center;
-                margin: 0 10px;
-                padding: 15px 0 0 0;
-                border-radius: 25px 25px 0 0;
-                &.active {
-                  background-color: #47eb8b;
-                  color: #fff;
-                }
-
-                .icon-yonghu {
-                  margin-left:0;
-                }
-                .icon-shouji {
-                  font-size: 20px;
-                  font-weight:bold;
-                }
-                .icon-erweima {
-
-                }
-                .icon-app {
-
-                }
-              }
-            }
           }
         }
      }
