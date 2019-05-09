@@ -1,22 +1,59 @@
 <template>
-  <div>register</div>
+    <!-- 注册 -->
+  <div class="rigister-box">
+        注册
+  </div>
 </template>
 
 <script>
-  export default {
-    name: 'register',
-    data () {
-      return {
+    export default {
+        name: 'rigister',
+        data () {
+            return {
 
-      }
-    },
-    methods:{
+            }
+        },
+        props:[],
+        components:{
 
+        },
+        methods:{
+
+        },
+        computed:{
+            
+        },
+        beforeCreate(){
+            
+        },
+        created(){
+            
+        },
+        beforemount(){
+            
+        },
+        mounted(){
+            
+        },
+        beforeUpdate(){
+            
+        },
+        updated(){
+            
+        },
+        beforeDestroy(){
+            
+        },
+        destroyed(){
+            
+        },
+        watch:{
+          
+        }
     }
-  }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
+    .rigister-box {
+        padding: 20px;
+    }
 </style>

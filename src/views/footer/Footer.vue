@@ -1,22 +1,59 @@
 <template>
-  <div>footer</div>
+    <!-- footer -->
+  <div class="footer">
+        footer
+  </div>
 </template>
 
 <script>
-  export default {
-    name: 'footer',
-    data () {
-      return {
+    export default {
+        name: 'footer',
+        data () {
+            return {
 
-      }
-    },
-    methods:{
+            }
+        },
+        props:[],
+        components:{
 
+        },
+        methods:{
+
+        },
+        computed:{
+            
+        },
+        beforeCreate(){
+            
+        },
+        created(){
+            
+        },
+        beforemount(){
+            
+        },
+        mounted(){
+            
+        },
+        beforeUpdate(){
+            
+        },
+        updated(){
+            
+        },
+        beforeDestroy(){
+            
+        },
+        destroyed(){
+            
+        },
+        watch:{
+          
+        }
     }
-  }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
+    .footer {
+        padding: 20px;
+    }
 </style>
