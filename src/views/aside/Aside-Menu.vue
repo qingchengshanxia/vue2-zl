@@ -3,7 +3,7 @@
   <div class="aside-box">
       <div class="search-box">
         <span>
-          <el-input placeholder="搜索菜单" v-model="searchMenuVal" @keyup.native="searchMenu" size="small" clearable>
+          <el-input placeholder="搜索菜单" v-model="searchMenuVal" @keyup.native="searchMenu" @keyup.enter.native="goPath" @clear="searchMenu" size="small" clearable>
               <template slot="prepend"><i class="iconfont icon-guolvqi"></i></template>
           </el-input>
         </span>
@@ -94,6 +94,15 @@
         }else {
           this.menus = this.oldmenu;
         }
+      },
+      goPath(){
+        //搜索时，按下enter键，切换到搜索结果中的第一个页面；
+        if(!this.searchMenuVal && !this.menus.length){
+          return;
+        }
+        this.changeTitle(this.menus[0].submenu.title,this.menus[0].submenu.url,this.menus[0].submenu.id,this.menus[0].submenu.url.split('/home/')[1].split('/')[0]);
+        this.searchMenuVal = '';
+        this.searchMenu();
       },
       initCurmenu(){
         //页面首次渲染，初始化显示被选中的菜单
