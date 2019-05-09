@@ -44,7 +44,7 @@
           <div :style="{height:mainHeight}">
             <transition>
               <!-- exclude表示不被缓存的组件，值为组件的name -->
-              <keep-alive exclude="shouye,yunshuxuqiu,yunshujihua,zuzhijigou,yonghuguanli,yonghuzuguanli,mubangguanli,haiyunzhixing,wuliuhetong">
+              <keep-alive exclude="shouye1">
                 <router-view></router-view>
               </keep-alive>
             </transition>
