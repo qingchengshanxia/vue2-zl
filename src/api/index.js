@@ -9,6 +9,9 @@
  * 
  * 
  */
+ let isProduct = process.env.NODE_ENV == 'production' ? true : false;//是否是生产环境
+ let isTest = process.env.NODE_ENV == 'exam' ? true : false;//是否是测试环境---如果两个都不是则是本地环境
+ 
 let systemPre = '/user-center/user'; //系统模块前缀
 
 let apiUrl = {

@@ -340,7 +340,7 @@
           left: 0;
           height: 100%;
           width: 5px;
-          background: #214c86;
+          background: $mainColor;
         }
       }
       .el-submenu__title i {

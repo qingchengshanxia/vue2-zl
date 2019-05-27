@@ -14,7 +14,7 @@ import store from '../store/index'
 var qs = require('querystring');
 //决定是否过滤URL中的/api
 
-let isFilterApi = process.env.NODE_ENV=='development'?false:true;//线上环境还是本地环境
+let isProduct = process.env.NODE_ENV=='development'?false:true;//线上环境还是本地环境
 
 Vue.prototype.$axios = axios.create({
     baseURL: '',
@@ -85,12 +85,10 @@ Vue.prototype.$http = function (option) {
     url = option.url;
   }
 
-  //如果是门户系统单点登录过来，则在每一个请求地址上加上‘utk=val’，否则不需要
-  url = sessionStorage.getItem('utk') ? (url.indexOf('?') > -1 ? (url + '&utk=' + sessionStorage.getItem('utk')) : (url + '?utk=' + sessionStorage.getItem('utk'))) : url;
-
+  //noservices表示url是否需要处理
   this.$axios({ 
     method:option.method?option.method:'post',
-    url:option.noservices?url:(isFilterApi?(url.replace("/api","/services")):(url.replace("/api","/api/services"))),
+    url:option.noservices?url:(isProduct?(url.replace("/api","")):url),
     data:data,
     dataType: option.dataType?option.dataType:"json",
   }).then(obj=>{
