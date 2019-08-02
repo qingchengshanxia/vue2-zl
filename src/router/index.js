@@ -67,6 +67,14 @@ const Duli = ()=> import('@/views/home/independent/duli');
 Vue.use(Router);
 
 let router = new Router({
+  scrollBehavior (to, from, savedPosition) {
+    // return 期望滚动到哪个的位置
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+  },
   routes: [
     {
       path:'/',
@@ -382,6 +390,9 @@ let router = new Router({
 
 //登录拦截
 router.beforeEach((to,from,next)=>{
+    if (to.meta.title) {
+      document.title = to.meta.title;
+    }
     if(to.matched.length === 0) {
         //如果未匹配到路由
         if(from.path){
